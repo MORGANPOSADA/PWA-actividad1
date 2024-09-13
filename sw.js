@@ -2,15 +2,17 @@ console.log('SW Hola mundo !!');
 
 self.addEventListener('install',(event)=>{
     console.log('SW: Instalado');
-});
+});  //indicando que se instale nuestro service worker
 
 self.addEventListener('fetch', (event)=>{
     console.log(event.request.url);
+    //console.log("estilos cambiados");
 
-    /*if(event.request.url.includes('style.css')){
+
+    if(event.request.url.includes('style.css')){
         const respuesta = new Response(
             `body{
-                color: blue;
+                color: white;
                 background-color: #000;
             }`,
             {
@@ -20,6 +22,6 @@ self.addEventListener('fetch', (event)=>{
             }
         );
         event.respondWith(respuesta);
-    }*/
+    }
 
 })
